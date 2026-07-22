@@ -60,7 +60,7 @@ function DashboardHome() {
           Selamat Datang Kembali, <span className="text-emerald-400">{namaAdmin || 'Admin'}</span>! 👋
         </h2>
         <p className="text-slate-300 text-sm max-w-2xl">
-          Data di bawah ini disinkronkan langsung secara *real-time* dari database sistem PadiScan.
+          Data di bawah ini disinkronkan langsung secara real-time dari database sistem PadiScan.
         </p>
       </motion.div>
 
