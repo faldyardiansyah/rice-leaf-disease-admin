@@ -102,7 +102,7 @@ function Sidebar({ isOpen, onClose }) {
         {/* Tombol Logout */}
         <button 
           onClick={handleLogout}
-          className="flex items-center space-x-3 px-4 py-3 bg-red-500/10 text-red-400 hover:bg-red-500/20 rounded-xl font-medium transition-colors border border-red-500/25 w-full"
+          className=" cursor-pointer flex items-center space-x-3 px-4 py-3 bg-red-500/10 text-red-400 hover:bg-red-500/20 rounded-xl font-medium transition-colors border border-red-500/25 w-full"
         >
           <span>🚪</span>
           <span>Keluar (Logout)</span>

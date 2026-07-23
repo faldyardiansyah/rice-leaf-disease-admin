@@ -88,7 +88,7 @@ export default function DataPenyakit() {
         </div>
         <button 
           onClick={handleExportPDF}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition flex items-center gap-2 shadow-lg"
+          className="cursor-pointer bg-gray-800  hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-medium transition flex items-center gap-2 shadow-lg"
         >
           📄 Export PDF
         </button>
@@ -147,13 +147,13 @@ export default function DataPenyakit() {
                     <td className="py-3 px-4 text-center space-x-2">
                       <button 
                         onClick={() => setSelectedItem(item)}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs font-medium transition"
+                        className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs font-medium transition"
                       >
                         Lihat
                       </button>
                       <button 
                         onClick={() => handleDelete(item)}
-                        className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs font-medium transition"
+                        className="cursor-pointer bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs font-medium transition"
                       >
                         Hapus
                       </button>
@@ -189,7 +189,7 @@ export default function DataPenyakit() {
                   <img 
                     src={getImageUrl(selectedItem)} 
                     alt="Bukti Scan" 
-                    className="w-full h-48 object-cover rounded-lg border border-gray-700 shadow-md" 
+                    className="w-full h-auto object-cover rounded-lg border border-gray-700 shadow-md" 
                   />
                 </div>
               )}
