@@ -31,10 +31,10 @@ function DashboardHome() {
         const response = await axiosInstance.get('/api/admin/dashboard');
         const result = response.data;
         
-        // Masukkan data dari database ke state
-        setStatistik(result.stats);
-        setDataGrafik(result.chartData);
-        setRecentScans(result.recentScans);
+        // Amankan dengan nilai default (fallback) jika backend mengirim null/undefined
+        setStatistik(result.stats || { totalScan: 0, totalPenyakit: 0, totalUser: 0 });
+        setDataGrafik(result.chartData || []);
+        setRecentScans(result.recentScans || []);
 
       } catch (error) {
         console.error("Gagal mengambil data dari database:", error);
@@ -54,7 +54,7 @@ function DashboardHome() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="bg-gradient-to-r from-emerald-900/40 via-slate-900 to-slate-900 border border-emerald-500/30 rounded-2xl p-6 shadow-xl"
+        className="bg-linear-to-r from-emerald-900/40 via-slate-900 to-slate-900 border border-emerald-500/30 rounded-2xl p-6 shadow-xl"
       >
         <h2 className="text-2xl font-bold text-white mb-2">
           Selamat Datang Kembali, <span className="text-emerald-400">{namaAdmin || 'Admin'}</span>! 👋
@@ -73,7 +73,7 @@ function DashboardHome() {
             <span className="p-2 bg-emerald-500/10 text-emerald-400 rounded-xl text-lg">📷</span>
           </div>
           <h3 className="text-3xl font-extrabold text-white">
-            {loading ? '...' : statistik.totalScan.toLocaleString()}
+            {loading ? '...' : (statistik.totalScan ?? 0).toLocaleString()}
           </h3>
           <p className="text-xs text-emerald-400 mt-2">Data dari database</p>
         </motion.div>
@@ -84,7 +84,7 @@ function DashboardHome() {
             <span className="p-2 bg-yellow-500/10 text-yellow-400 rounded-xl text-lg">🦠</span>
           </div>
           <h3 className="text-3xl font-extrabold text-white">
-            {loading ? '...' : statistik.totalPenyakit.toLocaleString()}
+            {loading ? '...' : (statistik.totalPenyakit ?? 0).toLocaleString()}
           </h3>
           <p className="text-xs text-yellow-400 mt-2">Perlu perhatian khusus</p>
         </motion.div>
@@ -95,7 +95,7 @@ function DashboardHome() {
             <span className="p-2 bg-blue-500/10 text-blue-400 rounded-xl text-lg">👤</span>
           </div>
           <h3 className="text-3xl font-extrabold text-white">
-            {loading ? '...' : statistik.totalUser.toLocaleString()}
+            {loading ? '...' : (statistik.totalUser ?? 0).toLocaleString()}
           </h3>
           <p className="text-xs text-blue-400 mt-2">Petani aktif terdaftar</p>
         </motion.div>
@@ -156,7 +156,7 @@ function DashboardHome() {
                 <tr>
                   <td colSpan="5" className="text-center py-6 text-slate-400">Memuat data dari database...</td>
                 </tr>
-              ) : recentScans.length === 0 ? (
+              ) : !recentScans || recentScans.length === 0 ? (
                 <tr>
                   <td colSpan="5" className="text-center py-6 text-slate-400">Belum ada data pemindaian.</td>
                 </tr>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axiosInstance from '../../api/axiosInstance';
 import { motion } from 'framer-motion';
 
 function Login() {
@@ -10,12 +10,13 @@ function Login() {
   
   const navigate = useNavigate();
 
+
   const handleLogin = async (e) => {
     e.preventDefault(); 
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:8080/api/login', {
+      const res = await axiosInstance.post('/api/login', {
         email: email,
         password: password
       });

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: import.meta.env.VITE_API_URL,
     headers: {
         'Content-Type': 'application/json',
     }
@@ -20,4 +20,4 @@ axiosInstance.interceptors.request.use(
     }
 );
 
-export default axiosInstance
+export default axiosInstance;
