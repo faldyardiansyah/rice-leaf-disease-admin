@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import Login from './admin/auth/login';
-import SplashScreen from './components/SplashScreen';
+import SplashScreen from './components/splashScreen';
 
 import AdminLayout from './admin/AdminLayout';
 import DashboardHome from './admin/pages/DashboardHome';
