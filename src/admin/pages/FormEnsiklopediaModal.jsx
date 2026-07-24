@@ -1,45 +1,45 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../api/axiosInstance';
 import Swal from 'sweetalert2';
 
 export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, selectedData, onSuccess }) {
   const [formData, setFormData] = useState({
-    kode_model: '',
-    nama_lokal: '',
-    nama_inggris: '',
-    status: 'Penyakit',
-    gambar_url: '',
-    link_artikel: '',
-    penyebab: '',
-    gejala: '',
-    solusi: ''
+    KodeModel: '',
+    NamaLokal: '',
+    NamaInggris: '',
+    Status: 'Penyakit',
+    GambarUrl: '',
+    LinkArtikel: '',
+    Penyebab: '',
+    Gejala: '',
+    Solusi: ''
   });
 
   useEffect(() => {
     if (isEditMode && selectedData) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
-        kode_model: selectedData.KodeModel || selectedData.kode_model || '',
-        nama_lokal: selectedData.NamaLokal || selectedData.nama_lokal || '',
-        nama_inggris: selectedData.NamaInggris || selectedData.nama_inggris || '',
-        status: selectedData.Status || selectedData.status || 'Penyakit',
-        gambar_url: selectedData.GambarUrl || selectedData.gambar_url || '',
-        link_artikel: selectedData.LinkArtikel || selectedData.link_artikel || '',
-        penyebab: selectedData.Penyebab || selectedData.penyebab || '',
-        gejala: selectedData.Gejala || selectedData.gejala || '',
-        solusi: selectedData.Solusi || selectedData.solusi || ''
+        KodeModel: selectedData.KodeModel || selectedData.kode_model || '',
+        NamaLokal: selectedData.NamaLokal || selectedData.nama_lokal || '',
+        NamaInggris: selectedData.NamaInggris || selectedData.nama_inggris || '',
+        Status: selectedData.Status || selectedData.status || 'Penyakit',
+        GambarUrl: selectedData.GambarUrl || selectedData.gambar_url || '',
+        LinkArtikel: selectedData.LinkArtikel || selectedData.link_artikel || '',
+        Penyebab: selectedData.Penyebab || selectedData.penyebab || '',
+        Gejala: selectedData.Gejala || selectedData.gejala || '',
+        Solusi: selectedData.Solusi || selectedData.solusi || ''
       });
     } else {
       setFormData({
-        kode_model: '',
-        nama_lokal: '',
-        nama_inggris: '',
-        status: 'Penyakit',
-        gambar_url: '',
-        link_artikel: '',
-        penyebab: '',
-        gejala: '',
-        solusi: ''
+        KodeModel: '',
+        NamaLokal: '',
+        NamaInggris: '',
+        Status: 'Penyakit',
+        GambarUrl: '',
+        LinkArtikel: '',
+        Penyebab: '',
+        Gejala: '',
+        Solusi: ''
       });
     }
   }, [isEditMode, selectedData, isOpen]);
@@ -104,8 +104,8 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
               <label className="block text-gray-400 mb-1">Kode Model (YOLO)</label>
               <input 
                 type="text" 
-                name="kode_model" 
-                value={formData.kode_model} 
+                name="KodeModel" 
+                value={formData.KodeModel} 
                 onChange={handleInputChange} 
                 placeholder="Contoh: Rice__BacterialLeafBlight" 
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
@@ -115,8 +115,8 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
             <div>
               <label className="block text-gray-400 mb-1">Status</label>
               <select 
-                name="status" 
-                value={formData.status} 
+                name="Status" 
+                value={formData.Status} 
                 onChange={handleInputChange} 
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
               >
@@ -131,8 +131,8 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
               <label className="block text-gray-400 mb-1">Nama Lokal</label>
               <input 
                 type="text" 
-                name="nama_lokal" 
-                value={formData.nama_lokal} 
+                name="NamaLokal" 
+                value={formData.NamaLokal} 
                 onChange={handleInputChange} 
                 placeholder="Contoh: Hawar Daun Bakteri" 
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
@@ -143,8 +143,8 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
               <label className="block text-gray-400 mb-1">Nama Inggris</label>
               <input 
                 type="text" 
-                name="nama_inggris" 
-                value={formData.nama_inggris} 
+                name="NamaInggris" 
+                value={formData.NamaInggris} 
                 onChange={handleInputChange} 
                 placeholder="Contoh: Bacterial Leaf Blight" 
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
@@ -158,8 +158,8 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
               <label className="block text-gray-400 mb-1">URL Gambar</label>
               <input 
                 type="text" 
-                name="gambar_url" 
-                value={formData.gambar_url} 
+                name="GambarUrl" 
+                value={formData.GambarUrl} 
                 onChange={handleInputChange} 
                 placeholder="https://..." 
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
@@ -170,8 +170,8 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
               <label className="block text-gray-400 mb-1">Link Artikel Referensi</label>
               <input 
                 type="text" 
-                name="link_artikel" 
-                value={formData.link_artikel} 
+                name="LinkArtikel" 
+                value={formData.LinkArtikel} 
                 onChange={handleInputChange} 
                 placeholder="https://..." 
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
@@ -182,9 +182,9 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
           <div>
             <label className="block text-gray-400 mb-1">Penyebab</label>
             <textarea 
-              name="penyebab" 
+              name="Penyebab" 
               rows="2"
-              value={formData.penyebab} 
+              value={formData.Penyebab} 
               onChange={handleInputChange} 
               placeholder="Jelaskan penyebab penyakit..." 
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
@@ -194,9 +194,9 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
           <div>
             <label className="block text-gray-400 mb-1">Gejala</label>
             <textarea 
-              name="gejala" 
+              name="Gejala" 
               rows="2"
-              value={formData.gejala} 
+              value={formData.Gejala} 
               onChange={handleInputChange} 
               placeholder="Jelaskan gejala klinis pada tanaman..." 
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
@@ -206,9 +206,9 @@ export default function FormEnsiklopediaModal({ isOpen, onClose, isEditMode, sel
           <div>
             <label className="block text-gray-400 mb-1">Solusi / Penanganan</label>
             <textarea 
-              name="solusi"
+              name="Solusi"
               rows="2"
-              value={formData.solusi} 
+              value={formData.Solusi} 
               onChange={handleInputChange} 
               placeholder="Cara penanganan atau obat yang disarankan..." 
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
