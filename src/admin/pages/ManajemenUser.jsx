@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../api/axiosInstance';
 import Swal from 'sweetalert2';
 import DetailUserModal from './DetailUserModal';
@@ -48,7 +48,7 @@ export default function ManajemenUser() {
 
     if (result.isConfirmed) {
       try {
-        await api.delete(`/api/users/${id}`);
+        await api.delete(`/api/profil/${id}`);
         setUserList(userList.filter(u => (u.ID || u.id) !== id));
         Swal.fire({
           title: 'Terhapus!',

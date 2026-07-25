@@ -22,7 +22,7 @@ export default function DetailUserModal({ isOpen, onClose, user }) {
         
         {/* Header Modal (Foto, Nama, Role, dan Tombol Close X) */}
         <div className="flex justify-between items-start mb-4 border-b border-gray-800 pb-3">
-          <div className="flex items-center gap-4">
+          <div className="flex items-centerc gap-4">
             <img
               src={fotoUrl}
               alt={nama}
