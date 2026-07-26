@@ -1,16 +1,61 @@
-# React + Vite
+# 🌾 RiceDisease AI — Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Admin panel berbasis web untuk platform **RiceDisease AI**, sebuah sistem deteksi penyakit tanaman padi berbasis AI. Dashboard ini menampilkan hasil deteksi dan riwayat pemindaian yang dilakukan pengguna melalui aplikasi mobile.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [ricedisease-admin.vercel.app](https://ricedisease-admin.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Tentang Project
 
-## React Compiler
+RiceDisease AI adalah sistem deteksi penyakit padi yang terdiri dari beberapa komponen: model AI object detection (Python + YOLO), backend API (Golang), aplikasi mobile untuk petani (Flutter), dan **admin dashboard ini** yang berfungsi sebagai panel visualisasi bagi admin/peneliti untuk memantau hasil deteksi.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Fitur
 
-## Expanding the ESLint configuration
+- Menampilkan hasil deteksi penyakit padi dari model AI
+- Riwayat pemindaian (scan history) pengguna
+- Antarmuka dashboard yang responsif dan mudah digunakan
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+| Kategori | Teknologi |
+|---|---|
+| Library | React |
+| Build Tool | Vite |
+| Linting | ESLint |
+| Deployment | Vercel |
+| Backend (terhubung) | Golang REST API |
+
+## ⚙️ Cara Menjalankan
+
+1. Clone repository ini
+   ```bash
+   git clone https://github.com/faldyardiansyah/rice-leaf-disease-admin.git
+   cd rice-leaf-disease-admin
+   ```
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Jalankan development server
+   ```bash
+   npm run dev
+   ```
+4. Buka `http://localhost:5173` di browser
+
+## 📦 Build untuk Production
+
+```bash
+npm run build
+```
+
+## 🔗 Project Terkait
+
+- [rice-leaf-disease](https://github.com/faldyardiansyah/rice-leaf-disease) — Aplikasi mobile (Flutter) untuk petani melakukan scan penyakit padi
+
+## 👤 Author
+
+**Faldy Ardiansyah**
+Mahasiswa D4 Rekayasa Perangkat Lunak — Politeknik Negeri Indramayu
+GitHub: [@faldyardiansyah](https://github.com/faldyardiansyah)
+
+---
+⭐ Jangan lupa kasih star kalau project ini bermanfaat!
